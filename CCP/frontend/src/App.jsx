@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Link, NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
-const API = "http://127.0.0.1:5000";
+const API = typeof window !== "undefined" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1" ? window.location.origin : "http://127.0.0.1:5000";
 
 const initialForm = {
   gender: "Male",

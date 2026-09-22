@@ -1,10 +1,11 @@
 import os
 import joblib
 import pandas as pd
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
-app = Flask(__name__)
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+app = Flask(__name__, static_folder=static_dir if os.path.exists(static_dir) else None, static_url_path="")
 CORS(app)
 
 # Load trained pipelines
@@ -20,7 +21,17 @@ except Exception as e:
     print(f"Error loading model files: {e}")
 
 @app.route("/")
-def home():
+def serve_index():
+    if static_dir and os.path.exists(os.path.join(static_dir, "index.html")):
+        return send_from_directory(static_dir, "index.html")
+    return jsonify({
+        "status": "online",
+        "message": "Customer Churn Prediction Multi-Model API is running",
+        "available_models": list(models_dict.keys()) if models_dict else ["Logistic Regression"]
+    })
+
+@app.route("/api/status")
+def api_status():
     return jsonify({
         "status": "online",
         "message": "Customer Churn Prediction Multi-Model API is running",
@@ -87,6 +98,15 @@ def predict():
         return jsonify({
             "error": str(e)
         }), 400
+
+# Fallback route for React SPA client-side routing
+@app.route("/<path:path>")
+def serve_static_or_spa(path):
+    if static_dir and os.path.exists(os.path.join(static_dir, path)):
+        return send_from_directory(static_dir, path)
+    if static_dir and os.path.exists(os.path.join(static_dir, "index.html")):
+        return send_from_directory(static_dir, "index.html")
+    return jsonify({"error": "Not Found"}), 404
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
