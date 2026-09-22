@@ -4,9 +4,15 @@
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Node / React
+node_modules/
+dist/
+.vite/
 
 # Virtual Environment
 venv/
