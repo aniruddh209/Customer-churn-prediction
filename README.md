@@ -1,4 +1,4 @@
-# 🚀 ChurnIQ - Customer Churn Prediction & Multi-Model Intelligence System
+# ChurnIQ - Customer Churn Prediction & Multi-Model Intelligence System
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.6.1-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
@@ -11,7 +11,7 @@
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
 - **Multi-Model Benchmark & Sandbox**: Train, compare, and execute live predictions across **7 Machine Learning Algorithms** (Logistic Regression, AdaBoost, Random Forest, Gradient Boosting, Decision Tree, KNN, and SVM).
 - **Automated Preprocessing Pipeline**: Raw customer data fields (Demographics, Services, Billing & Contract details) are automatically standard-scaled and one-hot encoded without manual feature engineering on the client side.
