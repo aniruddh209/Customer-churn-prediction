@@ -12,13 +12,12 @@ services:
         value: 3.10.14
 
   # 2. Frontend React Application
-  - type: static
+  - type: web_site
     name: churniq-frontend
-    env: static
     region: singapore
     rootDir: CCP/frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: CCP/frontend/dist
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
