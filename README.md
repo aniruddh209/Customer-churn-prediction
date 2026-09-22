@@ -755,14 +755,7 @@ For example, a business could use high-risk predictions to prioritize customers 
 - Dark/Light themes
 - Responsive UI
 
-### Deployment
 
-- Render-ready backend
-- Vite production build
-- Gunicorn configuration
-- Cloud deployment support
-
----
 
 # 🧪 Dataset
 
@@ -817,13 +810,8 @@ This makes the project more than a standalone ML notebook — it demonstrates ho
 
 ---
 
-# 📌 Resume Description
 
-**ChurnIQ — Customer Churn Prediction & Multi-Model Intelligence System**
 
-Developed an end-to-end Machine Learning web application using **Python, Scikit-learn, Flask, React, and Vite** to predict customer churn. Implemented and benchmarked **7 classification algorithms**, automated preprocessing using StandardScaler and OneHotEncoder, and achieved approximately **80.6% accuracy with Logistic Regression**. Built a Flask REST API for real-time predictions and a responsive React dashboard with interactive churn-risk visualization and multi-model analysis. Deployed the application using **Render and Gunicorn**.
-
----
 
 # 👨‍💻 Author
 
