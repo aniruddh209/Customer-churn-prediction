@@ -1,5 +1,5 @@
 # ChurnIQ - Customer Churn Prediction & Multi-Model Intelligence System
-
+Live Link Of Project : https://customer-churn-prediction-10fq.onrender.com/
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.6.1-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0.3-000000?style=for-the-badge&logo=flask&logoColor=white)
