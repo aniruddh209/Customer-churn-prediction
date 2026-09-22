@@ -1,5 +1,5 @@
 services:
-  # 1. Backend Flask API
+  # 1. Backend Flask API Web Service
   - type: web
     name: churniq-backend
     env: python
@@ -11,9 +11,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.10.14
 
-  # 2. Frontend React Application
-  - type: web_site
-    name: churniq-frontend
+staticSites:
+  # 2. Frontend React Application Static Site
+  - name: churniq-frontend
     region: singapore
     rootDir: CCP/frontend
     buildCommand: npm install && npm run build
