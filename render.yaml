@@ -1,0 +1,25 @@
+services:
+  # 1. Backend Flask API
+  - type: web
+    name: churniq-backend
+    env: python
+    region: singapore
+    rootDir: CCP/backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.14
+
+  # 2. Frontend React Application
+  - type: static
+    name: churniq-frontend
+    env: static
+    region: singapore
+    rootDir: CCP/frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: CCP/frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
